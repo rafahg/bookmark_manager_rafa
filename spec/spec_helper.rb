@@ -1,6 +1,6 @@
 require 'rspec'
 require 'sinatra'
-require 'robocop'
+require 'rubocop'
 require 'capybara'
 require 'selenium-webdriver'
 require 'capybara/rspec'
