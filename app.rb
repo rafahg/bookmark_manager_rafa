@@ -1,19 +1,21 @@
 require 'sinatra/base'
+require './lib/bookmark'
 
 class BookmarkManager < Sinatra::Base 
   enable :sessions
 
-  get '/' do
-    "Bookmark Manager"
-  end
+  # get '/' do
+  #   "Bookmark Manager"
+  # end
 
   get '/bookmarks' do
     # session[:bookmarks] = BookmarkManager.new.show_bookmarks
     # erb :bookmarks
-    @bookmarks = ["http://www.makersacademy.com",
-    "http://www.destroyallsoftware.com",
-    "http://www.google.com"]
-    # bookmarks.join
+    @bookmarks = Bookmark.all
+    # @bookmarks = ["http://www.makersacademy.com",
+    # "http://www.destroyallsoftware.com",
+    # "http://www.google.com"]
+    # # bookmarks.join
     erb :'bookmarks/index'
   end
   
